@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gym Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Gym Management System</h1>
+        <nav>
+            <button class="nav-btn" data-target="member-section">Members</button>
+            <button class="nav-btn" data-target="equipment-section">Equipment</button>
+            <button class="nav-btn" data-target="healthmetric-section">Health Metrics</button>
+            <button class="nav-btn" data-target="membershipplan-section">Membership Plans</button>
+            <button class="nav-btn" data-target="payment-section">Payments</button>
+            <button class="nav-btn" data-target="schedule-section">Schedules</button>
+            <button class="nav-btn" data-target="trainer-section">Trainers</button>
+        </nav>
+
+        <section id="member-section" class="entity-section">
+            <h2>Members</h2>
+            <form id="memberForm">
+                <label>Name:<input type="text" id="member-name" required /></label>
+                <label>Email:<input type="email" id="member-email" required /></label>
+                <label>Address:<input type="text" id="member-address" /></label>
+                <label>Phone:<input type="text" id="member-phone" required /></label>
+                <label>Membership Plan ID:<input type="number" id="member-membershipPlanId" /></label>
+                <button type="submit">Add Member</button>
+            </form>
+            <div id="member-result" class="result"></div>
+            <h3>All Members</h3>
+            <ul id="member-list"></ul>
+        </section>
+
+        <section id="equipment-section" class="entity-section" style="display:none;">
+            <h2>Equipment</h2>
+            <form id="equipmentForm">
+                <label>Name:<input type="text" id="equipment-name" required /></label>
+                <label>Type:<input type="text" id="equipment-type" required /></label>
+                <label>Purchase Date:<input type="date" id="equipment-purchaseDate" required /></label>
+                <label>Status:<input type="text" id="equipment-status" required /></label>
+                <button type="submit">Add Equipment</button>
+            </form>
+            <div id="equipment-result" class="result"></div>
+            <h3>All Equipment</h3>
+            <ul id="equipment-list"></ul>
+        </section>
+
+        <section id="healthmetric-section" class="entity-section" style="display:none;">
+            <h2>Health Metrics</h2>
+            <form id="healthMetricForm">
+                <label>Member ID:<input type="number" id="healthmetric-memberId" required /></label>
+                <label>Date:<input type="date" id="healthmetric-date" required /></label>
+                <label>Weight:<input type="number" step="0.1" id="healthmetric-weight" required /></label>
+                <label>Height:<input type="number" step="0.1" id="healthmetric-height" required /></label>
+                <label>BMI:<input type="number" step="0.1" id="healthmetric-bmi" /></label>
+                <label>Notes:<input type="text" id="healthmetric-notes" /></label>
+                <button type="submit">Add Health Metric</button>
+            </form>
+            <div id="healthmetric-result" class="result"></div>
+            <h3>All Health Metrics</h3>
+            <ul id="healthmetric-list"></ul>
+        </section>
+
+        <section id="membershipplan-section" class="entity-section" style="display:none;">
+            <h2>Membership Plans</h2>
+            <form id="membershipPlanForm">
+                <label>Name:<input type="text" id="membershipplan-name" required /></label>
+                <label>Description:<input type="text" id="membershipplan-description" /></label>
+                <label>Price:<input type="number" step="0.01" id="membershipplan-price" required /></label>
+                <label>Duration (Months):<input type="number" id="membershipplan-durationMonths" required /></label>
+                <label>Benefits:<input type="text" id="membershipplan-benefits" /></label>
+                <button type="submit">Add Membership Plan</button>
+            </form>
+            <div id="membershipplan-result" class="result"></div>
+            <h3>All Membership Plans</h3>
+            <ul id="membershipplan-list"></ul>
+        </section>
+
+        <section id="payment-section" class="entity-section" style="display:none;">
+            <h2>Payments</h2>
+            <form id="paymentForm">
+                <label>Member ID:<input type="number" id="payment-memberId" required /></label>
+                <label>Amount:<input type="number" step="0.01" id="payment-amount" required /></label>
+                <label>Status:<input type="text" id="payment-status" required /></label>
+                <button type="submit">Add Payment</button>
+            </form>
+            <div id="payment-result" class="result"></div>
+            <h3>All Payments</h3>
+            <ul id="payment-list"></ul>
+        </section>
+
+        <section id="schedule-section" class="entity-section" style="display:none;">
+            <h2>Schedules</h2>
+            <form id="scheduleForm">
+                <label>Trainer ID:<input type="number" id="schedule-trainerId" required /></label>
+                <label>Start Time:<input type="datetime-local" id="schedule-startTime" required /></label>
+                <label>End Time:<input type="datetime-local" id="schedule-endTime" required /></label>
+                <button type="submit">Add Schedule</button>
+            </form>
+            <div id="schedule-result" class="result"></div>
+            <h3>All Schedules</h3>
+            <ul id="schedule-list"></ul>
+        </section>
+
+        <section id="trainer-section" class="entity-section" style="display:none;">
+            <h2>Trainers</h2>
+            <form id="trainerForm">
+                <label>Name:<input type="text" id="trainer-name" required /></label>
+                <label>Specialization:<input type="text" id="trainer-specialization" required /></label>
+                <button type="submit">Add Trainer</button>
+            </form>
+            <div id="trainer-result" class="result"></div>
+            <h3>All Trainers</h3>
+            <ul id="trainer-list"></ul>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
