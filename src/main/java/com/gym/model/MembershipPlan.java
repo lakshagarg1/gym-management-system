@@ -15,10 +15,12 @@ public class MembershipPlan {
 
     private String name;
     private String description;
+    private String description;
     private Double price;
     
     @javax.persistence.Column(name = "duration_months")
     private Integer durationMonths;
+    private String benefits;
     private String benefits;
 
     public Long getId() {
@@ -45,6 +47,14 @@ public class MembershipPlan {
         this.description = description;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Double getPrice() {
         return price;
     }
@@ -59,6 +69,14 @@ public class MembershipPlan {
 
     public void setDurationMonths(Integer durationMonths) {
         this.durationMonths = durationMonths;
+    }
+
+    public String getBenefits() {
+        return benefits;
+    }
+
+    public void setBenefits(String benefits) {
+        this.benefits = benefits;
     }
 
     public String getBenefits() {
