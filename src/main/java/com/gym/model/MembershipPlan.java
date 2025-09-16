@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "membership_plan")
+@Table(name = "membership_plan") 
 public class MembershipPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,8 @@ public class MembershipPlan {
     private String name;
     private String description;
     private Double price;
+    
+    @javax.persistence.Column(name = "duration_months")
     private Integer durationMonths;
     private String benefits;
 

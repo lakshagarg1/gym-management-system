@@ -3,6 +3,7 @@ package com.gym.controller;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import com.gym.model.Trainer;
 @RequestMapping("/trainers")
 public class TrainerController {
     private List<Trainer> trainers = new ArrayList<>();
+    private AtomicLong idCounter = new AtomicLong(0);
 
     @GetMapping
     public List<Trainer> getAllTrainers() {
@@ -27,6 +29,7 @@ public class TrainerController {
 
     @PostMapping
     public Trainer addTrainer(@RequestBody Trainer trainer) {
+        trainer.setId(idCounter.incrementAndGet());
         trainers.add(trainer);
         return trainer;
     }

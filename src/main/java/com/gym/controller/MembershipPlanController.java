@@ -16,7 +16,7 @@ import com.gym.model.MembershipPlan;
 import com.gym.service.MembershipPlanService;
 
 @RestController
-@RequestMapping("/membership-plans")
+@RequestMapping("/membershipplans")
 public class MembershipPlanController {
     @Autowired
     private MembershipPlanService membershipPlanService;

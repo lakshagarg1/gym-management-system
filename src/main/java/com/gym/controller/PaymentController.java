@@ -3,6 +3,7 @@ package com.gym.controller;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ import com.gym.model.Payment;
 @RequestMapping("/payments")
 public class PaymentController {
     private final List<Payment> payments = new ArrayList<>();
-    private static long idCounter = 0;
+    private static AtomicLong idCounter = new AtomicLong(0);
 
     @GetMapping
     public List<Payment> getAllPayments() {
@@ -38,7 +39,7 @@ public class PaymentController {
 
     @PostMapping
     public Payment addPayment(@RequestBody Payment payment) {
-        payment.setId(++idCounter);
+        payment.setId(idCounter.incrementAndGet());
         payments.add(payment);
         return payment;
     }

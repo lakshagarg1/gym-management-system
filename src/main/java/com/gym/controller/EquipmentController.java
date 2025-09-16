@@ -16,7 +16,7 @@ import com.gym.model.Equipment;
 import com.gym.service.EquipmentService;
 
 @RestController
-@RequestMapping("/equipments")
+@RequestMapping("/equipment")
 public class EquipmentController {
     @Autowired
     private EquipmentService equipmentService;

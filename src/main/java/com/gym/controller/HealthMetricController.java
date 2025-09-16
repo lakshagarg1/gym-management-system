@@ -16,7 +16,7 @@ import com.gym.model.HealthMetric;
 import com.gym.service.HealthMetricService;
 
 @RestController
-@RequestMapping("/health-metrics")
+@RequestMapping("/healthmetrics")
 public class HealthMetricController {
     @Autowired
     private HealthMetricService healthMetricService;
